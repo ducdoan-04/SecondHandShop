@@ -1,2 +1,2 @@
-# SecondHanhShop
+# SecondHandShop
 Android App
