@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".fragments.settings.ManageMyShopFragment"
+    android:background="#F4F4F4">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressbarManageMyShop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:indeterminateTint="@color/g_gray700"
+            android:visibility="gone"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvManageMyShop"
+                style="@style/ManageshopTextViewThin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Manage my shop"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvManageMyShop">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageUser"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    style="@style/MediumTextViewThin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Name"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toEndOf="@id/imageUser"
+                    app:layout_constraintTop_toTopOf="@+id/imageUser" />
+
+                <TextView
+                    android:id="@+id/tvUserId"
+                    style="@style/SmallTextViewThin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2handshop.vn/hoducdoan2004@gmail.com"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toBottomOf="@id/tvUserName"
+                    app:layout_constraintStart_toStartOf="@+id/tvUserName" />
+                <TextView
+                    android:id="@+id/tvIdUser"
+                    style="@style/SmallTextViewThin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hoducdoan2004@gmail.com"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toBottomOf="@id/tvUserId"
+                    app:layout_constraintStart_toStartOf="@+id/tvUserId"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tvViewShop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View shop"
+                    android:textSize="10sp"
+                    android:textColor="#FF8C00"
+                    android:background="@drawable/button_border"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:drawableEnd="@drawable/ic_arrow_small"
+                    android:handwritingBoundsOffsetRight="5dp"
+                    android:src="@drawable/ic_arrow"
+                    app:layout_constraintEnd_toEndOf="@id/constraintProfile"
+                    app:layout_constraintTop_toTopOf="@id/tvUserName"
+                    app:layout_constraintBottom_toBottomOf="@id/tvUserId" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvOrders"
+                style="@style/MediumTextViewThin"
+                android:textColor="@color/g_gray700"
+                android:textStyle="normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Orders Status"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/constraintProfile" />
+
+            <LinearLayout
+                android:id="@+id/linearOrders"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/search_box_background"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@id/tvOrders"
+                >
+
+                <LinearLayout
+                    android:id="@+id/linearAllOrders"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:id="@+id/tvquantityConfirmed"
+                        style="@style/MediumTextViewThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="0"/>
+                    <TextView
+                        android:id="@+id/tvConfirmed"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirmed"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearAllOrders2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:id="@+id/tvquantitycanceled"
+                        style="@style/MediumTextViewThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="0"/>
+                    <TextView
+                        android:id="@+id/tvcanceled"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Canceled"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearAllOrders3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:id="@+id/tvquantityReturned"
+                        style="@style/MediumTextViewThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="0"/>
+                    <TextView
+                        android:id="@+id/Returned"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Returned"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearAllOrders4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:id="@+id/tvquantityDelivered"
+                        style="@style/MediumTextViewThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="0"/>
+                    <TextView
+                        android:id="@+id/returned"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivered"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearAllOrders5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:id="@+id/tvquantityShipped"
+                        style="@style/MediumTextViewThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="0"/>
+                    <TextView
+                        android:id="@+id/Shipped"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shipped"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearOrders2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@id/linearOrders"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/search_box_background">
+                <LinearLayout
+                    android:id="@+id/linearManageShop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearMyProducts"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_myshop"
+                            android:background="@drawable/settings_items_background"
+                            android:backgroundTint="#F8A257"
+                            app:tint="@color/white"/>
+                        <TextView
+                            android:id="@+id/tvMyProducts"
+                            style="@style/SmallTextViewThinManageShop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="My products"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearMyFinance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_money"
+                            android:background="@drawable/settings_items_background"
+                            android:backgroundTint="#0099FF"
+                            app:tint="@color/white"/>
+                        <TextView
+                            android:id="@+id/tvMyFinance"
+                            style="@style/SmallTextViewThinManageShop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="My Finance"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLearnAndHelp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_help"
+                            android:background="@drawable/settings_items_background"
+                            android:backgroundTint="#2BD67F"
+                            app:tint="@color/white"/>
+                        <TextView
+                            android:id="@+id/tvLearnAndHelp"
+                            style="@style/SmallTextViewThinManageShop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Learn and Help"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearManageShop2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearAddProduct"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_add_product"
+                            android:background="@drawable/settings_items_background"
+                            android:backgroundTint="#F8A257"
+                            app:tint="@color/white"/>
+                        <TextView
+                            android:id="@+id/tvAddProduct"
+                            style="@style/SmallTextViewThinManageShop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add products"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearUpdateProduct"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_edit_product"
+                            android:background="@drawable/settings_items_background"
+                            android:backgroundTint="#0099FF"
+                            app:tint="@color/white"/>
+                        <TextView
+                            android:id="@+id/tvEditProduct"
+                            style="@style/SmallTextViewThinManageShop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Edit product"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearDeleteProduct"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_delete_product"
+                            android:background="@drawable/settings_items_background"
+                            android:backgroundTint="#2BD67F"
+                            app:tint="@color/white"/>
+                        <TextView
+                            android:id="@+id/tvDeleteProduct"
+                            style="@style/SmallTextViewThinManageShop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delete product"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearManageShop3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearEditProfile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_edit_account"
+                            android:background="@drawable/settings_items_background"
+                            android:backgroundTint="#F8A257"
+                            app:tint="@color/white"/>
+                        <TextView
+                            android:id="@+id/tvEditProfile"
+                            style="@style/SmallTextViewThinManageShop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Edit Account"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearEditAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_edit_location"
+                            android:background="@drawable/settings_items_background"
+                            android:backgroundTint="#0099FF"
+                            app:tint="@color/white"/>
+                        <TextView
+                            android:id="@+id/tvEditAddress"
+                            style="@style/SmallTextViewThinManageShop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Edit address"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearOrderManagement"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_manage_shop"
+                            android:background="@drawable/settings_items_background"
+                            android:backgroundTint="#2BD67F"
+                            app:tint="@color/white"/>
+                        <TextView
+                            android:id="@+id/tvOrderManagement"
+                            style="@style/SmallTextViewThinManageShop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Order management"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvMissons"
+                style="@style/MediumTextViewThin"
+                android:textColor="@color/g_gray700"
+                android:textStyle="normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Missons"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/linearOrders2" />
+
+            
+            <LinearLayout
+                android:id="@+id/linearMissons"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@id/tvMissons"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/search_box_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="@id/guideline1"
+                    app:layout_constraintEnd_toEndOf="@id/guideline2">
+
+                    <ImageView
+                        android:id="@+id/img_gift1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_gift"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/settings_items_background"
+                        app:tint="@color/g_light_red"
+                        android:backgroundTint="#00000000"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="@id/img_gift1"
+                        app:layout_constraintEnd_toEndOf="@id/bt_startMissons"
+                        android:layout_gravity="center_vertical" >
+
+                        <TextView
+                            android:id="@+id/tv_missionName"
+                            style="@style/MediumTextViewThin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Livestream minimum 15 minutes"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_detailMissons"
+                            style="@style/SmallTextViewThin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Receive 5 discount vouchers 10$"
+                            android:layout_marginStart="5dp"
+                            app:layout_constraintTop_toBottomOf="@id/tv_missionName"
+                            app:layout_constraintStart_toStartOf="@+id/tv_missionName" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/bt_startMissons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:text="Start"
+                        android:textSize="11sp"
+                        android:backgroundTint="#F44444"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="@id/guideline1"
+                    app:layout_constraintEnd_toEndOf="@id/guideline2">
+
+                    <ImageView
+                        android:id="@+id/img_gift2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_gift"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/settings_items_background"
+                        app:tint="@color/g_light_red"
+                        android:backgroundTint="#00000000"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="@id/img_gift1"
+                        app:layout_constraintEnd_toEndOf="@id/bt_startMissons"
+                        android:layout_gravity="center_vertical" >
+
+                        <TextView
+                            android:id="@+id/tv_missionName2"
+                            style="@style/MediumTextViewThin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Create a video 2-minute"
+                            android:textColor="@color/g_gray700"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_detailMissons2"
+                            style="@style/SmallTextViewThin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Get 5$ advertising costs immediately"
+                            android:layout_marginStart="5dp"
+                            app:layout_constraintTop_toBottomOf="@id/tv_missionName"
+                            app:layout_constraintStart_toStartOf="@+id/tv_missionName" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/bt_startMissons2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:text="Start"
+                        android:textSize="11sp"
+                        android:backgroundTint="#F44444"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            
+            <!--Guideline-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shopping_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.secondhandshop.fragments.shopping.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.secondhandshop.fragments.shopping.SearchProductsFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_searchproducts">
+        <action
+            android:id="@+id/action_searchFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.secondhandshop.fragments.shopping.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_billingFragment"
+            app:destination="@id/billingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.secondhandshop.fragments.shopping.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_profileFragment_to_billingFragment"
+            app:destination="@id/billingFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_userAccountFragment"
+            app:destination="@id/userAccountFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_manageMyShopFragment"
+            app:destination="@id/manageMyShopFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_productFavouriteFragment"
+            app:destination="@id/productFavouriteFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.secondhandshop.fragments.shopping.ProductDetailsFragment"
+        android:label="ProductDetailsFragment"
+        tools:layout="@layout/fragment_product_details">
+        <argument
+            android:name="product"
+            app:argType="com.example.secondhandshop.data.Product"
+            app:nullable="false"/>
+        <action
+            android:id="@+id/action_productDetailsFragment_to_viewProfileShopFragment"
+            app:destination="@id/viewProfileShopFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.example.secondhandshop.fragments.shopping.AddressFragment"
+        android:label="AddressFragment"
+        tools:layout="@layout/fragment_address">
+        <argument
+            android:name="address"
+            app:argType="com.example.secondhandshop.data.Address"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/billingFragment"
+        android:name="com.example.secondhandshop.fragments.shopping.BillingFragment"
+        android:label="BillingFragment"
+        tools:layout="@layout/fragment_billing">
+        <action
+            android:id="@+id/action_billingFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+        <argument
+            android:name="totalPrice"
+            app:argType="float" />
+        <argument
+            android:name="products"
+            app:argType="com.example.secondhandshop.data.CartProduct[]" />
+        <argument
+            android:name="payment"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/userAccountFragment"
+        android:name="com.example.secondhandshop.fragments.settings.UserAccountFragment"
+        android:label="UserAccountFragment"
+        tools:layout="@layout/fragment_user_account"/>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.secondhandshop.fragments.settings.AllOrdersFragment"
+        android:label="OrdersFragment"
+        tools:layout="@layout/fragment_orders">
+        <action
+            android:id="@+id/action_ordersFragment_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="com.example.secondhandshop.fragments.settings.OrderDetailFragment"
+        android:label="OrderDetailFragment" >
+        <argument
+            android:name="order"
+            app:argType="com.example.secondhandshop.data.order.Order" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageMyShopFragment"
+        android:name="com.example.secondhandshop.fragments.settings.ManageMyShopFragment"
+        android:label="fragment_manage_my_shop"
+        tools:layout="@layout/fragment_manage_my_shop" >
+        <action
+            android:id="@+id/action_manageMyShopFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_manageMyShopFragment_to_viewProfileShopFragment"
+            app:destination="@id/viewProfileShopFragment" />
+        <action
+            android:id="@+id/action_manageMyShopFragment_to_listUpdateProductFragment"
+            app:destination="@id/listUpdateProductFragment" />
+        <action
+            android:id="@+id/action_manageMyShopFragment_to_deleteProductFragment"
+            app:destination="@id/deleteProductFragment" />
+        <action
+            android:id="@+id/action_manageMyShopFragment_to_userAccountFragment"
+            app:destination="@id/userAccountFragment" />
+        <action
+            android:id="@+id/action_manageMyShopFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+        <action
+            android:id="@+id/action_manageMyShopFragment_to_orderManagementFragment2"
+            app:destination="@id/orderManagementFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.secondhandshop.fragments.settings.AddProductFragment"
+        android:label="AddProductFragment" />
+    <fragment
+        android:id="@+id/viewProfileShopFragment"
+        android:name="com.example.secondhandshop.fragments.settings.ViewProfileShopFragment"
+        android:label="ViewProfileShopFragment"
+        tools:layout="@layout/fragment_view_profile_shop">
+        <action
+            android:id="@+id/action_viewProfileShopFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+
+        <argument
+            android:name="IdUser"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProductFragment"
+        android:name="com.example.secondhandshop.fragments.settings.UpdateProductFragment"
+        android:label="UpdateProductFragment" >
+        <argument
+            android:name="IdProduct"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/listUpdateProductFragment"
+        android:name="com.example.secondhandshop.fragments.settings.ListUpdateProductFragment"
+        android:label="ListUpdateProductFragment" >
+        <action
+            android:id="@+id/action_listUpdateProductFragment_to_updateProductFragment"
+            app:destination="@id/updateProductFragment" />
+        <argument
+            android:name="IdUser"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_listUpdateProductFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteProductFragment"
+        android:name="com.example.secondhandshop.fragments.DeleteProductFragment"
+        android:label="DeleteProductFragment" >
+        <action
+            android:id="@+id/action_deleteProductFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFavouriteFragment"
+        android:name="com.example.secondhandshop.fragments.shopping.ProductFavouriteFragment"
+        android:label="ProductFavouriteFragment" >
+        <action
+            android:id="@+id/action_productFavouriteFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.example.secondhandshop.fragments.shopping.AdminHomeFragment"
+        android:label="AdminHomeFragment"
+        tools:layout="@layout/fragment_admin_home">
+        <action
+            android:id="@+id/action_adminHomeFragment_to_viewProfileShopFragment"
+            app:destination="@id/viewProfileShopFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminUpdateUserAccountFragment"
+            app:destination="@id/adminUpdateUserAccountFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminVerifiProductsUserFragment"
+            app:destination="@id/adminVerifiProductsUserFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/adminUpdateUserAccountFragment"
+        android:name="com.example.secondhandshop.fragments.adminCategories.AdminUpdateUserAccountFragment"
+        android:label="AdminUpdateUserAccountFragment" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminVerifiProductsUserFragment"
+        android:name="com.example.secondhandshop.fragments.adminCategories.AdminVerifiProductsUserFragment"
+        android:label="AdminVerifiProductsUserFragment" >
+
+        <action
+            android:id="@+id/action_adminVerifiProductsUserFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderManagementFragment2"
+        android:name="com.example.secondhandshop.fragments.shopping.OrderManagementFragment"
+        android:label="OrderManagementFragment"
+        tools:layout="@layout/fragment_order_management">
+        <action
+            android:id="@+id/action_orderManagementFragment2_to_orderManageOrderDetailFragment2"
+            app:destination="@id/orderManageOrderDetailFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderManageOrderDetailFragment2"
+        android:name="com.example.secondhandshop.fragments.settings.OrderManageOrderDetailFragment"
+        android:label="OrderManageOrderDetailFragment">
+        <argument
+            android:name="order"
+            app:argType="com.example.secondhandshop.data.order.Order" />
+    </fragment>
+</navigation>

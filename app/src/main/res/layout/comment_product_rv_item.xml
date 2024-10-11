@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/g_card_background"
+    android:elevation="0dp"
+    app:cardBackgroundColor="@color/white"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_image_border"
+        android:backgroundTint="#E6E6E8"
+        android:paddingBottom="7dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/img_account"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_image_border"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAccountUserName"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_light"
+            android:maxLines="3"
+            android:text="Ho Duc Doan"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/img_account"
+            app:layout_constraintTop_toTopOf="@id/img_account" />
+
+        <TextView
+            android:id="@+id/tv_account_id"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="hoducdoan2004@gmail.com"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="8.5sp"
+            app:layout_constraintStart_toEndOf="@id/img_account"
+            app:layout_constraintTop_toBottomOf="@id/tvAccountUserName"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tv_id_id_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="aaaaaaa"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="8.5sp"
+            app:layout_constraintStart_toEndOf="@id/img_account"
+            app:layout_constraintTop_toBottomOf="@id/tvAccountUserName"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_id_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="abcdegfggjhojhrhjorhjohjojhhojhojhojh"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/img_account"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_id" />
+
+        <TextView
+            android:id="@+id/content_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="ffffffffffffffffffffff \n fffffffffffff"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_marginTop="7dp"
+
+            app:layout_constraintStart_toStartOf="@id/tvAccountUserName"
+            app:layout_constraintTop_toBottomOf="@id/tvAccountUserName"
+            />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="2024-06-10"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/image_status"
+            app:layout_constraintTop_toTopOf="@id/tvAccountUserName"
+            />
+
+
+        <ImageView
+            android:id="@+id/image_status"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/settings_items_background"
+            android:backgroundTint="#4CAF50"
+            app:layout_constraintStart_toEndOf="@id/tvAccountUserName"
+            app:layout_constraintTop_toTopOf="@id/tvAccountUserName" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

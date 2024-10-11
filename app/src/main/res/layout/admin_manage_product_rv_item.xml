@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#EFF2F4"
+    app:elevation="0dp"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/img_product"
+            android:layout_width="175dp"
+            android:layout_height="170dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitCenter"/>
+
+        <ImageView
+            android:id="@+id/img_favorite"
+            android:layout_width="20dp"
+            android:layout_height="22dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_save_product"
+            android:background="@drawable/blue_background"
+            android:backgroundTint="@color/g_white"
+            app:tint="#FF8C00"
+            app:layout_constraintStart_toStartOf="@id/img_product"
+            app:layout_constraintBottom_toBottomOf="@id/img_product"
+            android:layout_marginStart="2dp"
+            android:visibility="gone"/>
+
+
+        <LinearLayout
+            android:id="@+id/linear_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/img_product"
+            app:layout_constraintTop_toBottomOf="@id/img_product"
+            app:layout_constraintEnd_toEndOf="@id/img_product">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Chair"
+                android:paddingStart="5dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:maxLines="2"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_new_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingBottom="7dp"
+            android:paddingStart="2dp"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="$1600"
+            android:textColor="#E64646"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/img_product"
+            app:layout_constraintTop_toBottomOf="@id/linear_product_name"
+            />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="$1600"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/g_gray500"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@id/tv_new_price"
+            app:layout_constraintTop_toTopOf="@id/tv_new_price" />
+
+        <TextView
+            android:id="@+id/tv_sold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="Sold: "
+            android:textColor="@color/g_gray700"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_quantitysold"
+            app:layout_constraintTop_toTopOf="@id/tv_new_price" />
+
+        <TextView
+            android:id="@+id/tv_quantitysold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="12"
+            android:textColor="@color/g_gray700"
+            android:textSize="11sp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_price"
+           />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintBTNAccount"
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            app:layout_constraintStart_toStartOf="@id/img_product"
+            app:layout_constraintBottom_toBottomOf="@id/img_product"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/blue_background"
+            android:backgroundTint="#EEEBECEB"
+            >
+            <ImageView
+                android:id="@+id/imageEditProduct"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_edit"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/settings_items_background"
+                android:backgroundTint="#2196F3"
+                />
+            <ImageView
+                android:id="@+id/imageDeleteProduct"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="1dp"
+                app:layout_constraintStart_toEndOf="@id/imageEditProduct"
+                app:layout_constraintEnd_toStartOf="@id/imageVerifi"
+                app:layout_constraintTop_toTopOf="@id/imageEditProduct"
+                android:src="@drawable/ic_delete"
+                android:background="@drawable/settings_items_background"
+                android:backgroundTint="#EA3E3E"/>
+
+            <ImageView
+                android:id="@+id/imageVerifi"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/ic_report"
+                android:background="@drawable/settings_items_background"
+                android:backgroundTint="#FF9800"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

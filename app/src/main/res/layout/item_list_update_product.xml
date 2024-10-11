@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/g_white"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageSearchProduct"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/line"
+            app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="centerCrop"
+            android:src="@color/g_blue"/>
+
+        <TextView
+            android:id="@+id/tvProductSearchName"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Chair Chair Chair Chair Chair Chair ChairChair Chair Chair Chair Chair Chair"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageSearchProduct"
+            app:layout_constraintTop_toTopOf="@id/imageSearchProduct"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
+            android:maxLines="2"/>
+
+
+
+
+
+        <TextView
+            android:id="@+id/tvProductSearchPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="$500"
+            android:textColor="#FF2E2E"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tvProductSearchName"
+            app:layout_constraintTop_toBottomOf="@id/tvProductSearchName"/>
+
+
+
+
+        <ImageView
+            android:id="@+id/imageUpdateProduct"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/settings_items_background"
+            android:src="@drawable/ic_edit_product"
+            android:backgroundTint="#72AF73"
+            app:tint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideLine"/>
+
+
+        <ImageView
+            android:id="@+id/imageMinus"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_minus"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"/>
+
+
+
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageSearchProductColor"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="5dp"
+            android:src="@color/g_blue"
+            app:layout_constraintStart_toStartOf="@id/tvProductSearchPrice"
+            app:layout_constraintTop_toBottomOf="@id/tvProductSearchPrice"/>
+
+        <!--        <de.hdodenhof.circleimageview.CircleImageView-->
+        <ImageView
+            android:id="@+id/imageSearchProductSize"
+            android:layout_width="80dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="5dp"
+            android:src="@color/g_blue_gray200"
+            app:layout_constraintStart_toEndOf="@id/imageSearchProductColor"
+            app:layout_constraintTop_toTopOf="@id/imageSearchProductColor"/>
+
+
+
+        <TextView
+            android:id="@+id/tvSearchProductSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="L"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/imageSearchProductSize"
+            app:layout_constraintTop_toTopOf="@id/imageSearchProductSize"
+            app:layout_constraintStart_toStartOf="@id/imageSearchProductSize"
+            app:layout_constraintEnd_toEndOf="@id/imageSearchProductSize"/>
+
+        <TextView
+            android:id="@+id/tvIdProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="idProduct"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuideLine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuideLine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

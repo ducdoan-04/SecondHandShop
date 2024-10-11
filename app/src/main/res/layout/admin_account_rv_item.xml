@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/g_card_background"
+    android:elevation="0dp"
+    app:cardBackgroundColor="@color/white"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="88dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/background_image_border"
+        android:backgroundTint="@color/g_white">
+
+        <ImageView
+            android:id="@+id/img_account"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_image_border"
+            android:backgroundTint="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvAccountUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ho Duc Doan"
+            app:layout_constraintStart_toEndOf="@id/img_account"
+            app:layout_constraintTop_toTopOf="@id/img_account"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:maxLines="3"/>
+
+        <TextView
+            android:id="@+id/tv_account_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/img_account"
+            app:layout_constraintTop_toBottomOf="@id/tvAccountUserName"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:text="hoducdoan2004@gmail.com"
+            android:layout_marginStart="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_id_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/img_account"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_id"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:text="abcdegfggjhojhrhjorhjohjojhhojhojhojh"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_old_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintTop_toBottomOf="@id/tv_account_id"
+            app:layout_constraintStart_toEndOf="@id/tv_new_price"
+            android:textColor="@color/g_gray700"
+            android:textSize="12sp"
+            android:fontFamily="@font/sf_pro_display"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_new_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintStart_toStartOf="@id/tv_account_id"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_id"
+
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:fontFamily="@font/sf_pro_display"
+            android:visibility="gone"/>
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/btn_see_account"
+            android:layout_width="83dp"
+            android:layout_height="28dp"
+            android:background="@drawable/blue_background"
+            android:fontFamily="@font/poppins_light"
+            android:text="See account"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/tv_account_id"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_id"
+            android:textAllCaps="false"
+            android:layout_marginTop="5dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

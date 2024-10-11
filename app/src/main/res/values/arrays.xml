@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="product_categories">
+        <item>Category</item>
+        <item>Chair</item>
+        <item>Cupboard</item>
+        <item>Table</item>
+        <item>Accessory</item>
+        <item>Furniture</item>
+        <item>Best deals</item>
+        <item>Special Products</item>
+
+    </string-array>
+
+    <string-array name="account_positions">
+        <item>Position</item>
+        <item>Admin</item>
+        <item>Client</item>
+    </string-array>
+
+    <string-array name="user_account_positions">
+        <item>Admin</item>
+        <item>Client</item>
+    </string-array>
+
+    <string-array name="user_account_status">
+        <item>Unban</item>
+        <item>Ban</item>
+    </string-array>
+
+    <string-array name="product_user_status">
+        <item>Unban</item>
+        <item>Ban</item>
+    </string-array>
+</resources>

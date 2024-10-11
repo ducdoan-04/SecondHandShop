@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:id="@+id/nestedScrollBaseCategory">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height= "wrap_content">
+        
+        <ProgressBar
+            android:id="@+id/offerProductsProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/g_blue_gray200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rvListAccounts"
+            app:layout_constraintBottom_toBottomOf="@id/rvListAccounts"
+            android:visibility="gone"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListAccounts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/linearAdmin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/search_box_background">
+            <LinearLayout
+                android:id="@+id/linearManageShop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/linearAddAccount"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/background_image_border"
+                    android:backgroundTint="#98CC5F">
+
+
+                    <ImageView
+                        android:id="@+id/image_add_account"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_add"
+                        android:background="@drawable/settings_items_background"
+                        android:backgroundTint="#FFFFFF"
+                        app:tint="@color/black"
+
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="0dp"/>
+
+                    <TextView
+                        android:id="@+id/tvaddaccount"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="11sp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearUpdateAccount"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/background_image_border"
+                    android:backgroundTint="#EA5363">
+
+                    <ImageView
+                        android:id="@+id/image_update_account"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_edit_account"
+                        android:background="@drawable/settings_items_background"
+                        android:backgroundTint="#FFFFFF"
+                        app:tint="@color/black"
+
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="0dp"/>
+
+                    <TextView
+                        android:id="@+id/tvupdateaccount"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Update"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="11sp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearDeleteAccount"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/background_image_border"
+                    android:backgroundTint="#FDC950">
+
+                    <ImageView
+                        android:id="@+id/image_delete_account"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_delete"
+                        android:background="@drawable/settings_items_background"
+                        android:backgroundTint="#FFFFFF"
+                        app:tint="@color/black"
+
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="0dp"/>
+
+                    <TextView
+                        android:id="@+id/tvdeleteaccount"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delete"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="11sp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearBanAccount"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/background_image_border"
+                    android:backgroundTint="#5998E8">
+
+                    <ImageView
+                        android:id="@+id/image_ban_account"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_report"
+                        android:background="@drawable/settings_items_background"
+                        android:backgroundTint="#FFFFFF"
+                        app:tint="@color/black"
+
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="0dp"/>
+
+                    <TextView
+                        android:id="@+id/tvbanaccount"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Verifi"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="11sp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearManageShop2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/linearAddProduct"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="left"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/background_image_border"
+                    android:backgroundTint="#FDC950">
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_add_product"
+                        android:background="@drawable/settings_items_background"
+                        android:backgroundTint="#F8A257"
+                        app:tint="@color/white"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:id="@+id/tvtotalReports"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Report"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvquantitytotalReports"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="..."
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="↓ 3 More vs last 7 days"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearUpdateProduct"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="left"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/background_image_border"
+                    android:backgroundTint="#5998E8">
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_edit_product"
+                        android:background="@drawable/settings_items_background"
+                        android:backgroundTint="#0099FF"
+                        app:tint="@color/white"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:id="@+id/tvtotalRevenue"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Revenue"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvquantitytotalRevenue"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$ ..."
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvrevenue"
+                        style="@style/SmallTextViewThinManageShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="↑ 15% More vs last 7 days"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvListReports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins_thin"
+            android:text="List Reports"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@id/rvListReports"
+            app:layout_constraintTop_toBottomOf="@id/linearAdmin"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListReports"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvListReports"
+            android:layout_marginEnd="15dp"
+            android:overScrollMode="never"
+            />
+
+
+        <ProgressBar
+            android:id="@+id/ListAccountsProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/g_blue_gray200"
+            app:layout_constraintTop_toBottomOf="@id/rvListReports"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
