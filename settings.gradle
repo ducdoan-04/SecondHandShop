@@ -17,6 +17,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
         //noinspection JcenterRepositoryObsolete
         jcenter()
         maven {
@@ -28,6 +29,10 @@ dependencyResolutionManagement {
                 password "AKCp8jQ8tAahqpT5JjZ4FRP2mW7GMoFZ674kGqHmupTesKeAY2G8NcmPKLuTxTGkKjDLRzDUQ"
             }
         }
+        flatDir {
+            dirs 'app/libs'
+        }
+
     }
 }
 

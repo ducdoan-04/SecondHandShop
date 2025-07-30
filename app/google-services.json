@@ -7,43 +7,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:582501997406:android:837a6918cbf1cd7e098dcf",
-        "android_client_info": {
-          "package_name": "com.example.secondhandshop"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "582501997406-17n1fcarpo3nlkmolugjk1r57cklgfas.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.secondhandshop",
-            "certificate_hash": "f49dee20de41596ab3a30b60e1c2ab3a0350825e"
-          }
-        },
-        {
-          "client_id": "582501997406-auil7kfg9drik1a8krpad8gfsrjubvh9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB0QHL0RRzMbTnVUmub_VLR7Sp5CCsTmHk"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "582501997406-auil7kfg9drik1a8krpad8gfsrjubvh9.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:582501997406:android:5072d018a433d34b098dcf",
         "android_client_info": {
           "package_name": "com.example.secondhandshop"
@@ -51,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "582501997406-6fjoaing2pomiljtvlhud91q77dv76nv.apps.googleusercontent.com",
+          "client_id": "582501997406-9mc6da4ld38s7e71nf7ak7s28rrd5osh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.secondhandshop",
-            "certificate_hash": "f49dee20de41596ab3a30b60e1c2ab3a0350825e"
+            "certificate_hash": "1c1e219ec4f84f5dd219284513a5eb8c55e71be0"
           }
         },
         {

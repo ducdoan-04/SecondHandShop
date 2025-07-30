@@ -104,7 +104,7 @@
             app:layout_constraintStart_toEndOf="@id/tvAccountUserName"
             app:layout_constraintTop_toTopOf="@id/tvAccountUserName" />
 
-        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/btn_see_account"
             android:layout_width="80dp"
             android:layout_height="20dp"

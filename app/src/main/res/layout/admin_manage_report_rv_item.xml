@@ -105,7 +105,7 @@
             app:layout_constraintStart_toStartOf="@id/img_product"
             app:layout_constraintTop_toTopOf="@id/img_product" />
 
-        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/btn_see"
             android:layout_width="90dp"
             android:layout_height="20dp"

@@ -35,9 +35,11 @@ import com.example.secondhandshop.util.Resource
 import com.example.secondhandshop.util.hideBottomNavigationView
 import com.example.secondhandshop.viewmodel.DetailsViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
+//import com.google.firebase.firestore.ktx.firestore
+//import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.FirebaseFirestore
+//import com.google.firebase.storage.ktx.storage
+import com.google.firebase.storage.FirebaseStorage
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import java.util.UUID
@@ -55,8 +57,8 @@ class ProductDetailsFragment: Fragment() {
     private var selectedSize: String? = null
     private val viewModel by viewModels<DetailsViewModel>()
     private var user2: User? = null
-    private val productsStorage = Firebase.storage.reference
-    private val firestore = Firebase.firestore
+    private val productsStorage = FirebaseStorage.getInstance().reference
+    private val firestore = FirebaseFirestore.getInstance()
 
     private lateinit var commentAdapter: CommentProductAdapter
 

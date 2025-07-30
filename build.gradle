@@ -1,9 +1,17 @@
 buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        jcenter() // Tạm thời cho thư viện cũ
+    }
     dependencies {
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.46'
         classpath 'com.google.gms:google-services:4.3.13'
         def nav_version = "2.5.0"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24")
+        classpath 'com.google.gms:google-services:4.4.2'
     }
 }
 
@@ -11,7 +19,26 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.jetbrains.kotlin.android) apply false
     alias(libs.plugins.google.gms.google.services) apply false
+    id 'com.google.dagger.hilt.android' version '2.48' apply false
 }
+allprojects {
+    configurations.all {
+        resolutionStrategy {
+            force 'com.google.firebase:firebase-common:20.4.1'
+            force 'com.google.firebase:firebase-firestore:24.6.1'
+            force 'com.google.firebase:firebase-auth:22.3.1'
+        }
+        resolutionStrategy.eachDependency {
+            if (requested.group == "org.jetbrains.kotlin") {
+                useVersion("1.9.24")
+            }
+            if (requested.group == "org.jetbrains.kotlinx") {
+                useVersion("1.7.3") // tương thích tốt với Kotlin 1.9.24
+            }
+        }
+    }
+}
+
 task clean(type: Delete){
     delete rootProject.buildDir
 }

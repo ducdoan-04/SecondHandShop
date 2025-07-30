@@ -26,9 +26,13 @@ import com.example.secondhandshop.data.User
 import com.example.secondhandshop.databinding.FragmentUpdateProductBinding
 import com.example.secondhandshop.util.Resource
 import com.example.secondhandshop.viewmodel.UpdateProductViewModel
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
+//import com.google.firebase.firestore.ktx.firestore
+//import com.google.firebase.ktx.Firebase
+//import com.google.firebase.storage.ktx.storage
+
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.firestore.FirebaseFirestore
+
 import com.skydoves.colorpickerview.ColorEnvelope
 import com.skydoves.colorpickerview.ColorPickerDialog
 import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener
@@ -52,8 +56,10 @@ class UpdateProductFragment: Fragment(R.layout.fragment_update_product) {
 
     private var selectedImages = mutableListOf<Uri>()
     private var selectedColors = mutableListOf<Int>()
-    private val productsStorage = Firebase.storage.reference
-    private val firestore = Firebase.firestore
+//    private val productsStorage = Firebase.storage.reference
+    private val productsStorage = FirebaseStorage.getInstance().reference
+//    private val firestore = Firebase.firestore
+    private val firestore = FirebaseFirestore.getInstance()
     private val categories = arrayOf("Chair", "Cupboard", "Table", "Accessory", "Furniture","Best deals","Special Products")
 
     override fun onCreateView(
